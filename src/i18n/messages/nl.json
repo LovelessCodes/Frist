@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Leeg = kalendermaanden",
     "anchorNote": "Zo werkt het anker",
     "anchorBody": "Veranker de budgetperiode aan je betaaldag. Stel 25 in en de periode loopt van de 25e tot de 24e — een salaris op 25 september dekt dus 25 sep – 24 okt. Ankers worden ook begrensd zoals de herhalingsmotor: dag 31 wordt 28 februari.",
+    "anchorWeekend": "Verplaats weekend-betaaldagen naar vrijdag",
+    "anchorWeekendHelp": "Valt de ankerdag op zaterdag of zondag, dan begint de periode op de vrijdag ervoor — de dag waarop het geld echt binnenkomt.",
     "remindSwitch": "Herinner mij vóór betalingen",
     "remindDays": "Dagen vóór een betaling",
     "remindPlaceholder": "Leeg = standaard (3)",

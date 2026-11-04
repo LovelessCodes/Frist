@@ -53,6 +53,8 @@
     "anchorPlaceholder": "留空 = 自然月",
     "anchorNote": "锚点如何工作",
     "anchorBody": "把预算周期锚定到发薪日。设为 25，周期就从 25 日到下月 24 日——9 月 25 日到账的工资覆盖 9 月 25 日至 10 月 24 日。锚点也会像重复引擎一样收敛：31 日会变成 2 月 28 日。",
+    "anchorWeekend": "将周末发薪日移到周五",
+    "anchorWeekendHelp": "如果锚点落在周六或周日，周期将从之前的周五开始——钱实际到账的那一天。",
     "remindSwitch": "扣款前提醒我",
     "remindDays": "提前天数",
     "remindPlaceholder": "留空 = 默认（3）",

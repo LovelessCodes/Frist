@@ -15,6 +15,8 @@ export type Settings = {
   theme: Theme
   budgetAmountMinor: number | null
   payAnchorDay: number | null
+  /** Pull a weekend anchor back to the last weekday before it. */
+  payAnchorShiftWeekends: boolean
   remindDaysBefore: number
   remindersEnabled: boolean
   icalToken: string | null
@@ -31,6 +33,7 @@ export const defaultSettings: Settings = {
   theme: 'system',
   budgetAmountMinor: null,
   payAnchorDay: null,
+  payAnchorShiftWeekends: false,
   remindDaysBefore: 3,
   remindersEnabled: true,
   icalToken: null,
@@ -58,6 +61,7 @@ export async function getSettings(
     theme: (row.theme as Theme | null) ?? defaultSettings.theme,
     budgetAmountMinor: row.budgetAmountMinor ?? null,
     payAnchorDay: row.payAnchorDay ?? null,
+    payAnchorShiftWeekends: row.payAnchorShiftWeekends ?? false,
     remindDaysBefore: row.remindDaysBefore ?? defaultSettings.remindDaysBefore,
     remindersEnabled: row.remindersEnabled ?? defaultSettings.remindersEnabled,
     icalToken: row.icalToken ?? null,
@@ -99,6 +103,9 @@ export async function updateSettings(
     }),
     ...(patch.payAnchorDay !== undefined && {
       payAnchorDay: patch.payAnchorDay,
+    }),
+    ...(patch.payAnchorShiftWeekends !== undefined && {
+      payAnchorShiftWeekends: patch.payAnchorShiftWeekends,
     }),
     ...(patch.remindDaysBefore !== undefined && {
       remindDaysBefore: patch.remindDaysBefore,

@@ -14,6 +14,7 @@ import { PasskeyCard } from '@/components/passkey-card'
 import { TwoFactorCard } from '@/components/two-factor-card'
 import {
   Field,
+  FieldContent,
   FieldDescription,
   FieldGroup,
   FieldLabel,
@@ -224,6 +225,7 @@ function SettingsPage() {
                 ? null
                 : fromMajorUnits(budgetAmount, currency),
             payAnchorDay: anchorDay,
+            payAnchorShiftWeekends: next.anchorWeekend === 'on',
             remindDaysBefore: remindDays,
             remindersEnabled: next.remindEnabled === 'on',
           },
@@ -401,6 +403,25 @@ function SettingsPage() {
                     />
                   </Field>
                 </div>
+                {form.anchor.trim() !== '' && (
+                  <Field orientation="horizontal">
+                    <FieldContent>
+                      <FieldLabel htmlFor="settings-anchor-weekend">
+                        {t('anchorWeekend')}
+                      </FieldLabel>
+                      <FieldDescription>
+                        {t('anchorWeekendHelp')}
+                      </FieldDescription>
+                    </FieldContent>
+                    <Switch
+                      id="settings-anchor-weekend"
+                      checked={form.anchorWeekend === 'on'}
+                      onCheckedChange={(checked) =>
+                        change('anchorWeekend', checked ? 'on' : 'off')
+                      }
+                    />
+                  </Field>
+                )}
                 <AnchorNote />
               </FieldGroup>
               <IncomeSourcesCard
@@ -564,6 +585,7 @@ function formFrom(settings: Settings) {
         ? ''
         : String(toMajorUnits(settings.budgetAmountMinor, settings.currency)),
     anchor: settings.payAnchorDay === null ? '' : String(settings.payAnchorDay),
+    anchorWeekend: settings.payAnchorShiftWeekends ? 'on' : 'off',
     remindDays: String(settings.remindDaysBefore),
     remindEnabled: settings.remindersEnabled ? 'on' : 'off',
   }

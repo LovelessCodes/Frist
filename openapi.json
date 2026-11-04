@@ -782,6 +782,9 @@
           "payAnchorDay": {
             "type": "number"
           },
+          "payAnchorShiftWeekends": {
+            "type": "boolean"
+          },
           "remindDaysBefore": {
             "type": "number"
           },
@@ -18207,6 +18210,9 @@
                       "number",
                       "null"
                     ]
+                  },
+                  "payAnchorShiftWeekends": {
+                    "type": "boolean"
                   },
                   "remindDaysBefore": {
                     "type": [

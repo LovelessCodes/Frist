@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Tómt = kalendarmánaðir",
     "anchorNote": "Hvussu akkerið virkar",
     "anchorBody": "Akker fíggjarætlanartíðarskeiðið at gjaldingardegi tínum. Set 25, og tíðarskeiðið gongur frá 25. til 24. — so ein løn, ið kemur 25. september, fevnir 25. sep – 24. okt. Akker verða eisini markað sum endurtøkumaskinan: dagur 31 verður 28. februar.",
+    "anchorWeekend": "Flyt vággalykkjulønardagar til fríggjadag",
+    "anchorWeekendHelp": "Um ankerið er ein leygardag ella sunnudag, byrjar skeiðið fríggjadagin áðrenn — dagin tá peningurin veruliga kemur.",
     "remindSwitch": "Minn meg áðrenn gjaldingar",
     "remindDays": "Dagar áðrenn gjalding",
     "remindPlaceholder": "Tómt = sjálvsett (3)",

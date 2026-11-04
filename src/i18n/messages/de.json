@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Leer = Kalendermonate",
     "anchorNote": "So funktioniert der Anker",
     "anchorBody": "Verankere den Budgetzeitraum an deinem Gehaltstag. Bei 25 läuft der Zeitraum vom 25. bis zum 24. — ein Gehalt am 25. September deckt also den 25. Sep – 24. Okt ab. Anker werden wie in der Wiederholungslogik begrenzt: Tag 31 wird zum 28. Februar.",
+    "anchorWeekend": "Wochenend-Zahltage auf Freitag verschieben",
+    "anchorWeekendHelp": "Fällt der Anker auf einen Samstag oder Sonntag, beginnt der Zeitraum am Freitag davor — dem Tag, an dem das Geld tatsächlich ankommt.",
     "remindSwitch": "Vor Zahlungen erinnern",
     "remindDays": "Tage vor einer Zahlung",
     "remindPlaceholder": "Leer = Standard (3)",

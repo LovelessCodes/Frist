@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Tom = kalendermåneder",
     "anchorNote": "Sådan virker ankret",
     "anchorBody": "Ankrer budgetperioden til din lønningsdag. Sæt 25, og perioden løber fra den 25. til den 24. — så en løn, der lander 25. september, dækker 25. sep – 24. okt. Ankret begrænses også som gentagelsesmotoren: dag 31 bliver den 28. februar.",
+    "anchorWeekend": "Flyt weekendlønningsdage til fredag",
+    "anchorWeekendHelp": "Hvis ankret falder på en lørdag eller søndag, starter perioden om fredagen — den dag pengene faktisk ankommer.",
     "remindSwitch": "Mind mig før betalinger",
     "remindDays": "Dage før en betaling",
     "remindPlaceholder": "Tom = standard (3)",

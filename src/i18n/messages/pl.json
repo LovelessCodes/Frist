@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Puste = miesiące kalendarzowe",
     "anchorNote": "Jak działa punkt zaczepienia",
     "anchorBody": "Zaczep okres budżetu o dzień wypłaty. Ustaw 25, a okres będzie biegł od 25. do 24. — wypłata z 25 września pokrywa więc 25 wrz – 24 paź. Punkty zaczepienia są też przycinane jak w silniku powtarzania: dzień 31 staje się 28 lutego.",
+    "anchorWeekend": "Przenieś weekendowe dni wypłaty na piątek",
+    "anchorWeekendHelp": "Jeśli kotwica wypada w sobotę lub niedzielę, okres zaczyna się w poprzedzający piątek — w dniu, w którym pieniądze naprawdę przychodzą.",
     "remindSwitch": "Przypominaj mi przed płatnościami",
     "remindDays": "Dni przed płatnością",
     "remindPlaceholder": "Puste = domyślnie (3)",

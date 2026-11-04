@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Tyhjä = kalenterikuukaudet",
     "anchorNote": "Näin ankkuri toimii",
     "anchorBody": "Ankkuroi budjettijakso palkkapäivääsi. Aseta 25, niin jakso kulkee 25. päivästä 24. päivään — syyskuun 25. päivänä saapuva palkka kattaa siis 25.9.–24.10. Ankkurit rajataan myös toistomoottorin tapaan: päivästä 31 tulee 28. helmikuuta.",
+    "anchorWeekend": "Siirrä viikonlopun palkkapäivät perjantaille",
+    "anchorWeekendHelp": "Jos ankkuri osuu lauantaille tai sunnuntaille, jakso alkaa sitä edeltävänä perjantaina — päivänä, jolloin raha todella saapuu.",
     "remindSwitch": "Muistuta minua ennen maksuja",
     "remindDays": "Päivää ennen maksua",
     "remindPlaceholder": "Tyhjä = oletus (3)",

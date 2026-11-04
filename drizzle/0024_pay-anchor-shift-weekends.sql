@@ -1,0 +1,1 @@
+ALTER TABLE `user_setting` ADD `pay_anchor_shift_weekends` integer;

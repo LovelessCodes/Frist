@@ -169,6 +169,13 @@
       "when": 1792410473369,
       "tag": "0023_drop-subscription-payer",
       "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "6",
+      "when": 1793796818483,
+      "tag": "0024_pay-anchor-shift-weekends",
+      "breakpoints": true
     }
   ]
 }

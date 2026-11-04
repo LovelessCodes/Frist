@@ -154,6 +154,7 @@ export const settingsPatchSchema = z.object({
   theme: z.enum(themes).optional(),
   budgetAmountMinor: z.number().int().min(0).nullish(),
   payAnchorDay: z.number().int().min(1).max(31).nullish(),
+  payAnchorShiftWeekends: z.boolean().optional(),
   remindDaysBefore: z.number().int().min(0).max(60).nullish(),
   remindersEnabled: z.boolean().optional(),
 })

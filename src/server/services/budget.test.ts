@@ -68,6 +68,75 @@ describe('budget: period math', () => {
     expect(paydayFebruary.start).toEqual(new Date('2026-02-28T00:00:00.000Z'))
     expect(paydayFebruary.end).toEqual(new Date('2026-03-30T00:00:00.000Z'))
   })
+
+  it('leaves weekend anchors alone unless shifting is on', () => {
+    const period = getBudgetPeriod(new Date('2026-10-26T08:00:00.000Z'), 25)
+
+    expect(period.start).toEqual(new Date('2026-10-25T00:00:00.000Z'))
+  })
+
+  it('moves a Sunday anchor back to Friday', () => {
+    const period = getBudgetPeriod(
+      new Date('2026-10-26T08:00:00.000Z'),
+      25,
+      true,
+    )
+
+    expect(period.start).toEqual(new Date('2026-10-23T00:00:00.000Z'))
+    expect(period.end).toEqual(new Date('2026-11-24T00:00:00.000Z'))
+  })
+
+  it('moves a Saturday anchor back to Friday', () => {
+    const period = getBudgetPeriod(
+      new Date('2026-07-25T08:00:00.000Z'),
+      25,
+      true,
+    )
+
+    expect(period.start).toEqual(new Date('2026-07-24T00:00:00.000Z'))
+    expect(period.end).toEqual(new Date('2026-08-24T00:00:00.000Z'))
+  })
+
+  it('shifts a clamped short-month anchor off the weekend', () => {
+    // Day 31 clamps to 28 February 2026, a Saturday.
+    const period = getBudgetPeriod(
+      new Date('2026-02-27T08:00:00.000Z'),
+      31,
+      true,
+    )
+
+    expect(period.start).toEqual(new Date('2026-02-27T00:00:00.000Z'))
+    expect(period.end).toEqual(new Date('2026-03-30T00:00:00.000Z'))
+  })
+
+  it('keeps a weekday anchor in place', () => {
+    const period = getBudgetPeriod(
+      new Date('2026-09-25T08:00:00.000Z'),
+      25,
+      true,
+    )
+
+    expect(period.start).toEqual(new Date('2026-09-25T00:00:00.000Z'))
+  })
+
+  it('starts the weekend-earlier period before the weekend', () => {
+    // 2 August 2026 is a Sunday, so August opens on Friday 31 July.
+    const thursday = getBudgetPeriod(
+      new Date('2026-07-30T08:00:00.000Z'),
+      2,
+      true,
+    )
+    const friday = getBudgetPeriod(
+      new Date('2026-07-31T08:00:00.000Z'),
+      2,
+      true,
+    )
+
+    expect(thursday.start).toEqual(new Date('2026-07-02T00:00:00.000Z'))
+    expect(thursday.end).toEqual(new Date('2026-07-30T00:00:00.000Z'))
+    expect(friday.start).toEqual(new Date('2026-07-31T00:00:00.000Z'))
+    expect(friday.end).toEqual(new Date('2026-09-01T00:00:00.000Z'))
+  })
 })
 
 describe('budget: status', () => {

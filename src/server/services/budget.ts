@@ -19,9 +19,42 @@ export type BudgetPeriod = {
   anchored: boolean
 }
 
+/**
+ * The day an anchored period starts in a given month. With weekend shifting
+ * on, a Saturday or Sunday anchor moves back to the Friday before it — the
+ * last day a bank moves money.
+ */
+function anchorStart(
+  year: number,
+  month: number,
+  anchor: number,
+  shiftWeekends: boolean,
+): Date {
+  const start = new Date(
+    Date.UTC(year, month, Math.min(anchor, daysInMonth(year, month))),
+  )
+  if (!shiftWeekends) return start
+
+  const weekday = start.getUTCDay()
+  if (weekday === 6) return new Date(start.getTime() - MS_PER_DAY)
+  if (weekday === 0) return new Date(start.getTime() - 2 * MS_PER_DAY)
+  return start
+}
+
+/** A month as a single number, so boundaries can cross year edges. */
+function anchorStartAt(
+  months: number,
+  anchor: number,
+  shiftWeekends: boolean,
+): Date {
+  const year = Math.floor(months / 12)
+  return anchorStart(year, months - year * 12, anchor, shiftWeekends)
+}
+
 export function getBudgetPeriod(
   now: Date,
   payAnchorDay: number | null,
+  shiftWeekends = false,
 ): BudgetPeriod {
   const anchor = payAnchorDay && payAnchorDay > 1 ? payAnchorDay : null
   const year = now.getUTCFullYear()
@@ -35,40 +68,23 @@ export function getBudgetPeriod(
     }
   }
 
-  const thisMonthStart = new Date(
-    Date.UTC(year, month, Math.min(anchor, daysInMonth(year, month))),
-  )
+  // Boundaries stay attached to their nominal month: a weekend shift can pull
+  // one into the previous month (2 August -> 31 July), so pick the latest
+  // boundary that has already started rather than assuming this month's.
+  const thisMonth = year * 12 + month
+  const startsAt = (months: number) =>
+    anchorStartAt(months, anchor, shiftWeekends)
 
-  let start = thisMonthStart
-  if (now.getTime() < thisMonthStart.getTime()) {
-    const previous = new Date(Date.UTC(year, month - 1, 1))
-    const previousYear = previous.getUTCFullYear()
-    const previousMonth = previous.getUTCMonth()
-    start = new Date(
-      Date.UTC(
-        previousYear,
-        previousMonth,
-        Math.min(anchor, daysInMonth(previousYear, previousMonth)),
-      ),
-    )
+  let periodMonth = thisMonth
+  if (now.getTime() < startsAt(thisMonth).getTime()) {
+    periodMonth -= 1
+  } else if (now.getTime() >= startsAt(thisMonth + 1).getTime()) {
+    periodMonth += 1
   }
 
-  const next = new Date(
-    Date.UTC(start.getUTCFullYear(), start.getUTCMonth() + 1, 1),
-  )
-  const nextYear = next.getUTCFullYear()
-  const nextMonth = next.getUTCMonth()
-  const nextStart = new Date(
-    Date.UTC(
-      nextYear,
-      nextMonth,
-      Math.min(anchor, daysInMonth(nextYear, nextMonth)),
-    ),
-  )
-
   return {
-    start,
-    end: new Date(nextStart.getTime() - MS_PER_DAY),
+    start: startsAt(periodMonth),
+    end: new Date(startsAt(periodMonth + 1).getTime() - MS_PER_DAY),
     anchored: true,
   }
 }
@@ -121,7 +137,11 @@ export async function getBudgetStatus(
 ): Promise<BudgetStatus> {
   const now = options.now ?? new Date()
   const settings = await getSettings(db, userId)
-  const period = getBudgetPeriod(now, settings.payAnchorDay)
+  const period = getBudgetPeriod(
+    now,
+    settings.payAnchorDay,
+    settings.payAnchorShiftWeekends,
+  )
 
   const [page, sources, categoryPage] = await Promise.all([
     listSubscriptions(

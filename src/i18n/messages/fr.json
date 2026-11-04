@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Vide = mois calendaires",
     "anchorNote": "Comment fonctionne l'ancrage",
     "anchorBody": "Ancrez la période budgétaire à votre jour de paie. Réglez 25 et la période court du 25 au 24 — un salaire arrivant le 25 septembre couvre donc du 25 sep au 24 oct. L'ancrage est aussi borné comme le moteur de récurrence : le jour 31 devient le 28 février.",
+    "anchorWeekend": "Déplacer les jours de paie du week-end au vendredi",
+    "anchorWeekendHelp": "Si l'ancre tombe un samedi ou un dimanche, la période commence le vendredi précédent — le jour où l'argent arrive réellement.",
     "remindSwitch": "Me rappeler avant les paiements",
     "remindDays": "Jours avant un paiement",
     "remindPlaceholder": "Vide = défaut (3)",

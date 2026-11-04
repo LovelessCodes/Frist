@@ -16,6 +16,7 @@ export const settingsPlugin = () =>
           theme: { type: 'string', required: false },
           budgetAmountMinor: { type: 'number', required: false },
           payAnchorDay: { type: 'number', required: false },
+          payAnchorShiftWeekends: { type: 'boolean', required: false },
           remindDaysBefore: { type: 'number', required: false },
           remindersEnabled: { type: 'boolean', required: false },
           icalToken: { type: 'string', required: false },

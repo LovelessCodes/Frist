@@ -42,6 +42,7 @@ describe('settings service', () => {
       theme: 'dark',
       budgetAmountMinor: null,
       payAnchorDay: null,
+      payAnchorShiftWeekends: false,
       remindDaysBefore: defaultSettings.remindDaysBefore,
       remindersEnabled: defaultSettings.remindersEnabled,
       icalToken: null,
@@ -51,6 +52,22 @@ describe('settings service', () => {
     expect(patched.locale).toBe('da')
     expect(patched.currency).toBe('EUR')
     expect(patched.theme).toBe('dark')
+  })
+
+  it('remembers whether weekend paydays move', async () => {
+    const { db } = createTestDb()
+    await insertTestUser(db, 'u1')
+
+    const on = await updateSettings(db, 'u1', {
+      payAnchorShiftWeekends: true,
+    })
+    expect(on.payAnchorShiftWeekends).toBe(true)
+    expect((await getSettings(db, 'u1')).payAnchorShiftWeekends).toBe(true)
+
+    const off = await updateSettings(db, 'u1', {
+      payAnchorShiftWeekends: false,
+    })
+    expect(off.payAnchorShiftWeekends).toBe(false)
   })
 
   it('switches reminders off and back on', async () => {

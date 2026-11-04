@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Empty = calendar months",
     "anchorNote": "How anchoring works",
     "anchorBody": "Anchor the budget period to your pay day. Set 25 and the period runs the 25th to the 24th — so a salary landing on 25 September covers 25 Sep – 24 Oct. Anchors also clamp like the recurrence engine: day 31 becomes the 28th of February.",
+    "anchorWeekend": "Move weekend paydays to Friday",
+    "anchorWeekendHelp": "If the anchor lands on a Saturday or Sunday, the period starts the Friday before — the day the money actually arrives.",
     "remindSwitch": "Remind me before charges",
     "remindDays": "Days before a charge",
     "remindPlaceholder": "Empty = default (3)",

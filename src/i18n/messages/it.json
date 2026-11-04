@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Vuoto = mesi di calendario",
     "anchorNote": "Come funziona l'ancora",
     "anchorBody": "Ancora il periodo del budget al giorno di stipendio. Imposta 25 e il periodo va dal 25 al 24 — così uno stipendio che arriva il 25 settembre copre dal 25 set al 24 ott. Le ancore vengono limitate come nel motore delle ricorrenze: il giorno 31 diventa il 28 febbraio.",
+    "anchorWeekend": "Sposta i giorni di paga nel weekend al venerdì",
+    "anchorWeekendHelp": "Se l'ancora cade di sabato o domenica, il periodo inizia il venerdì precedente: il giorno in cui i soldi arrivano davvero.",
     "remindSwitch": "Avvisami prima degli addebiti",
     "remindDays": "Giorni prima di un addebito",
     "remindPlaceholder": "Vuoto = predefinito (3)",

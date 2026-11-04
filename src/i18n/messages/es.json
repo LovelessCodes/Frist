@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Vacío = meses naturales",
     "anchorNote": "Cómo funciona el ancla",
     "anchorBody": "Ancla el período del presupuesto a tu día de cobro. Pon 25 y el período va del 25 al 24 — así, un sueldo que llega el 25 de septiembre cubre del 25 sep al 24 oct. Las anclas también se limitan como el motor de recurrencia: el día 31 pasa a ser el 28 de febrero.",
+    "anchorWeekend": "Mover los días de pago en fin de semana al viernes",
+    "anchorWeekendHelp": "Si el ancla cae en sábado o domingo, el periodo empieza el viernes anterior: el día en que el dinero llega de verdad.",
     "remindSwitch": "Avisarme antes de los pagos",
     "remindDays": "Días antes de un pago",
     "remindPlaceholder": "Vacío = predeterminado (3)",

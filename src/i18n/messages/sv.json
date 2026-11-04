@@ -53,6 +53,8 @@
     "anchorPlaceholder": "Tomt = kalendermånader",
     "anchorNote": "Så fungerar ankaret",
     "anchorBody": "Ankra budgetperioden till din löndag. Ange 25 och perioden löper från den 25:e till den 24:e — så en lön som landar 25 september täcker 25 sep – 24 okt. Ankare begränsas också som upprepningsmotorn: dag 31 blir 28 februari.",
+    "anchorWeekend": "Flytta helgutbetalningsdagar till fredag",
+    "anchorWeekendHelp": "Om ankaret infaller på en lördag eller söndag börjar perioden fredagen innan — dagen pengarna faktiskt kommer.",
     "remindSwitch": "Påminn mig före betalningar",
     "remindDays": "Dagar före en betalning",
     "remindPlaceholder": "Tomt = standard (3)",
