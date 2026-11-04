@@ -81,7 +81,7 @@ Prefer building from a checkout? `docker build -t frist . && docker run -d --nam
 One volume (`/data`) holds the SQLite database — WAL mode, so the `-wal` and `-shm` files travel with it — plus the `logos/` folder for uploaded images. Migrations run automatically on every boot: upgrading is pulling a new image. On a fresh install the logs print a claim URL (`docker compose logs frist | grep Frist`) and the account that opens it becomes the administrator — the token lives at `data/setup-token` and is deleted once claimed. Tagged releases publish a multi-arch image to `ghcr.io/lovelesscodes/frist`:
 
 ```bash
-git tag v0.3.1 && git push origin v0.3.1   # builds amd64 + arm64, writes release notes
+git tag v0.4.0 && git push origin v0.4.0   # builds amd64 + arm64, writes release notes
 ```
 
 The workflow can also be run manually from the Actions tab — manual runs build without pushing anything, so the pipeline is verifiable without cutting a release.
