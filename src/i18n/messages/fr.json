@@ -215,7 +215,7 @@
     "feedOff": "Le flux est désactivé. Activez-le pour obtenir une URL à laquelle les calendriers peuvent s'abonner.",
     "enableFeed": "Activer le flux",
     "keysTitle": "Clés d'API",
-    "keysDescription": "Accès complet pour scripts et tableaux de bord : envoyez x-api-key au lieu d'un cookie de session. Limité à 600 requêtes par heure et par clé.",
+    "keysDescription": "Accès complet pour scripts, tableaux de bord et clients MCP : envoyez x-api-key au lieu d'un cookie de session. Limité à 600 requêtes par heure et par clé.",
     "createKey": "Créer une clé",
     "shownOnce": "Cette clé n'est affichée qu'une fois — conservez-la en lieu sûr.",
     "copy": "Copier",
@@ -245,7 +245,11 @@
     "revokeTitle": "Révoquer cette clé ?",
     "revokeDescription": "Les requêtes utilisant « {name} » échoueront immédiatement. Cette action est irréversible.",
     "keepKey": "Garder la clé",
-    "errGeneric": "Une erreur est survenue."
+    "errGeneric": "Une erreur est survenue.",
+    "mcpTitle": "Serveur MCP",
+    "mcpDescription": "Pointez Claude, Cursor ou un autre client MCP vers ce point de terminaison. Il peut se connecter via OAuth ou utiliser une clé API créée ci-dessous.",
+    "mcpEndpoint": "Point de terminaison",
+    "mcpHint": "Les clés fonctionnent ici et sur l'API REST — envoyez-en une via x-api-key. Les outils MCP peuvent lire vos données, mais jamais les modifier."
   },
   "channels": {
     "title": "Canaux de livraison",

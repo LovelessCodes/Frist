@@ -215,7 +215,7 @@
     "feedOff": "Feed jest wyłączony. Włącz go, aby uzyskać URL, który mogą subskrybować kalendarze.",
     "enableFeed": "Włącz feed",
     "keysTitle": "Klucze API",
-    "keysDescription": "Pełny dostęp dla skryptów i paneli: wysyłaj x-api-key zamiast ciasteczka sesji. Limit 600 żądań na godzinę na klucz.",
+    "keysDescription": "Pełny dostęp dla skryptów, paneli i klientów MCP: wysyłaj x-api-key zamiast ciasteczka sesji. Limit 600 żądań na godzinę na klucz.",
     "createKey": "Utwórz klucz",
     "shownOnce": "Ten klucz jest pokazywany tylko raz — zachowaj go w bezpiecznym miejscu.",
     "copy": "Kopiuj",
@@ -245,7 +245,11 @@
     "revokeTitle": "Unieważnić ten klucz?",
     "revokeDescription": "Żądania używające „{name}” zaczną natychmiast zawodzić. Tego nie można cofnąć.",
     "keepKey": "Zatrzymaj klucz",
-    "errGeneric": "Coś poszło nie tak."
+    "errGeneric": "Coś poszło nie tak.",
+    "mcpTitle": "Serwer MCP",
+    "mcpDescription": "Skieruj Claude, Cursor lub innego klienta MCP na ten punkt końcowy. Może zalogować się przez OAuth lub użyć klucza API utworzonego poniżej.",
+    "mcpEndpoint": "Punkt końcowy",
+    "mcpHint": "Klucze działają tutaj i w API REST — wyślij jeden jako x-api-key. Narzędzia MCP mogą czytać Twoje dane, ale nigdy ich nie zmieniają."
   },
   "channels": {
     "title": "Kanały dostarczania",

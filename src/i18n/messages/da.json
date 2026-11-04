@@ -215,7 +215,7 @@
     "feedOff": "Feed'en er slået fra. Aktivér den for at få en URL, kalendere kan abonnere på.",
     "enableFeed": "Aktivér feed",
     "keysTitle": "API-nøgler",
-    "keysDescription": "Fuld adgang for scripts og dashboards: send x-api-key i stedet for en sessionscookie. Begrænset til 600 forespørgsler i timen pr. nøgle.",
+    "keysDescription": "Fuld adgang for scripts, dashboards og MCP-klienter: send x-api-key i stedet for en sessionscookie. Begrænset til 600 forespørgsler i timen pr. nøgle.",
     "createKey": "Opret nøgle",
     "shownOnce": "Denne nøgle vises kun én gang — gem den et sikkert sted.",
     "copy": "Kopiér",
@@ -245,7 +245,11 @@
     "revokeTitle": "Tilbagekald denne nøgle?",
     "revokeDescription": "Forespørgsler med “{name}” begynder at fejle med det samme. Det kan ikke fortrydes.",
     "keepKey": "Behold nøglen",
-    "errGeneric": "Noget gik galt."
+    "errGeneric": "Noget gik galt.",
+    "mcpTitle": "MCP-server",
+    "mcpDescription": "Peg Claude, Cursor eller en anden MCP-klient mod dette endepunkt. Den kan logge ind med OAuth eller bruge en API-nøgle oprettet nedenfor.",
+    "mcpEndpoint": "Endepunkt",
+    "mcpHint": "Nøgler virker her og på REST-API'en — send en som x-api-key. MCP-værktøjer kan læse dine data, men aldrig ændre dem."
   },
   "channels": {
     "title": "Leveringskanaler",

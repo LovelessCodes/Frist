@@ -215,7 +215,7 @@
     "feedOff": "The feed is off. Enable it to get a URL calendars can subscribe to.",
     "enableFeed": "Enable feed",
     "keysTitle": "API keys",
-    "keysDescription": "Full access for scripts and dashboards: send x-api-key instead of a session cookie. Limited to 600 requests per hour per key.",
+    "keysDescription": "Full access for scripts, dashboards and MCP clients: send x-api-key instead of a session cookie. Limited to 600 requests per hour per key.",
     "createKey": "Create key",
     "shownOnce": "This key is shown once — store it somewhere safe.",
     "copy": "Copy",
@@ -245,7 +245,11 @@
     "revokeTitle": "Revoke this key?",
     "revokeDescription": "Requests using “{name}” start failing immediately. This cannot be undone.",
     "keepKey": "Keep key",
-    "errGeneric": "Something went wrong."
+    "errGeneric": "Something went wrong.",
+    "mcpTitle": "MCP server",
+    "mcpDescription": "Point Claude, Cursor or another MCP client at this endpoint. It can sign in with OAuth, or use an API key created below.",
+    "mcpEndpoint": "Endpoint",
+    "mcpHint": "Keys work here and on the REST API — send one as x-api-key. MCP tools can read your data but never change it."
   },
   "channels": {
     "title": "Delivery channels",

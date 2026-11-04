@@ -100,7 +100,7 @@ function Integrations() {
   const [origin, setOrigin] = useState('')
   const [pending, setPending] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [copied, setCopied] = useState<'feed' | 'key' | null>(null)
+  const [copied, setCopied] = useState<'feed' | 'key' | 'mcp' | null>(null)
   const [revealed, setRevealed] = useState(false)
   const [flash, setFlash] = useState(false)
   const [rotateOpen, setRotateOpen] = useState(false)
@@ -115,6 +115,15 @@ function Integrations() {
   }, [])
 
   const feedUrl = ical.path ? `${origin}${ical.path}` : null
+  const mcpUrl = `${origin}/api/mcp`
+  const mcpSnippet = `{
+  "mcpServers": {
+    "frist": {
+      "url": "${mcpUrl}",
+      "headers": { "x-api-key": "<key>" }
+    }
+  }
+}`
   const revoking = keys.find((key) => key.id === revokeId) ?? null
 
   async function run(action: () => Promise<unknown>) {
@@ -130,7 +139,7 @@ function Integrations() {
     }
   }
 
-  async function copy(value: string, flag: 'feed' | 'key') {
+  async function copy(value: string, flag: 'feed' | 'key' | 'mcp') {
     try {
       await navigator.clipboard.writeText(value)
       setCopied(flag)
@@ -287,6 +296,37 @@ function Integrations() {
                 </Button>
               </div>
             )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <div className="flex flex-col gap-1.5">
+              <CardTitle>{t('mcpTitle')}</CardTitle>
+              <CardDescription>{t('mcpDescription')}</CardDescription>
+            </div>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1.5">
+              <span className="text-xs font-medium">{t('mcpEndpoint')}</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <code className="min-w-0 flex-1 truncate rounded bg-muted px-2 py-1 font-mono text-xs">
+                  {mcpUrl}
+                </code>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => copy(mcpUrl, 'mcp')}
+                >
+                  <CopyGlyph copied={copied === 'mcp'} />
+                  {copied === 'mcp' ? t('copied') : t('copy')}
+                </Button>
+              </div>
+            </div>
+            <pre className="overflow-x-auto rounded-lg border border-border bg-muted/40 p-3 font-mono text-[11px] leading-relaxed text-muted-foreground">
+              {mcpSnippet}
+            </pre>
+            <p className="text-xs text-muted-foreground">{t('mcpHint')}</p>
           </CardContent>
         </Card>
 

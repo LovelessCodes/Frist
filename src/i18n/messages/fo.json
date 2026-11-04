@@ -215,7 +215,7 @@
     "feedOff": "Feedið er sløkt. Slá tað til at fáa eitt URL, sum kalendarar kunnu abonnera.",
     "enableFeed": "Slá feed til",
     "keysTitle": "API-nyklar",
-    "keysDescription": "Full atgongd fyri skript og dashboard: send x-api-key í staðin fyri eitt session-cookie. Avmarkað til 600 fyrispurningar um tíman fyri hvønn nykil.",
+    "keysDescription": "Full atgongd fyri skript, dashboard og MCP-klientar: send x-api-key í staðin fyri eitt session-cookie. Avmarkað til 600 fyrispurningar um tíman fyri hvønn nykil.",
     "createKey": "Stovna nykil",
     "shownOnce": "Hesin nykilin verður vístur eina ferð — goym hann á einum tryggum stað.",
     "copy": "Avrita",
@@ -245,7 +245,11 @@
     "revokeTitle": "Afturkalla henda nykilin?",
     "revokeDescription": "Fyrispurningar við “{name}” byrja beint at miseydnast. Hetta kann ikki gerast av.",
     "keepKey": "Varðveit nykilin",
-    "errGeneric": "Nakað fór galið."
+    "errGeneric": "Nakað fór galið.",
+    "mcpTitle": "MCP-tænari",
+    "mcpDescription": "Vend Claude, Cursor ella annan MCP-klient móti hesum endanum. Hann kann rita seg inn við OAuth ella brúka ein API-nykil, sum er gjørdur niðanfyri.",
+    "mcpEndpoint": "Endi",
+    "mcpHint": "Nykilar virka her og á REST-API — send ein sum x-api-key. MCP-amboð kunnu lesa tíni dáta, men ongantíð broyta tey."
   },
   "channels": {
     "title": "Leveringskanalir",

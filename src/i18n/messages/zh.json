@@ -215,7 +215,7 @@
     "feedOff": "订阅源已关闭。启用后会得到一个日历可以订阅的 URL。",
     "enableFeed": "启用订阅源",
     "keysTitle": "API 密钥",
-    "keysDescription": "脚本和仪表盘的完全访问权限：发送 x-api-key 代替会话 Cookie。每个密钥每小时限 600 次请求。",
+    "keysDescription": "脚本、仪表盘和 MCP 客户端的完全访问权限：发送 x-api-key 代替会话 Cookie。每个密钥每小时限 600 次请求。",
     "createKey": "创建密钥",
     "shownOnce": "此密钥仅显示一次——请妥善保存。",
     "copy": "复制",
@@ -245,7 +245,11 @@
     "revokeTitle": "吊销此密钥？",
     "revokeDescription": "使用“{name}”的请求会立即开始失败。此操作无法撤销。",
     "keepKey": "保留密钥",
-    "errGeneric": "出了点问题。"
+    "errGeneric": "出了点问题。",
+    "mcpTitle": "MCP 服务器",
+    "mcpDescription": "将 Claude、Cursor 或其他 MCP 客户端指向此端点。它可以通过 OAuth 登录，或使用下方创建的 API 密钥。",
+    "mcpEndpoint": "端点",
+    "mcpHint": "密钥在此处和 REST API 中均可用——以 x-api-key 发送。MCP 工具只能读取你的数据，不能修改。"
   },
   "channels": {
     "title": "投递渠道",

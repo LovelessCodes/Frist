@@ -215,7 +215,7 @@
     "feedOff": "El feed está desactivado. Actívalo para obtener una URL a la que puedan suscribirse los calendarios.",
     "enableFeed": "Activar feed",
     "keysTitle": "Claves de API",
-    "keysDescription": "Acceso total para scripts y paneles: envía x-api-key en lugar de una cookie de sesión. Limitado a 600 solicitudes por hora y clave.",
+    "keysDescription": "Acceso total para scripts, paneles y clientes MCP: envía x-api-key en lugar de una cookie de sesión. Limitado a 600 solicitudes por hora y clave.",
     "createKey": "Crear clave",
     "shownOnce": "Esta clave se muestra una sola vez: guárdala en un lugar seguro.",
     "copy": "Copiar",
@@ -245,7 +245,11 @@
     "revokeTitle": "¿Revocar esta clave?",
     "revokeDescription": "Las solicitudes que usen “{name}” empezarán a fallar de inmediato. Esto no se puede deshacer.",
     "keepKey": "Mantener la clave",
-    "errGeneric": "Algo salió mal."
+    "errGeneric": "Algo salió mal.",
+    "mcpTitle": "Servidor MCP",
+    "mcpDescription": "Apunta Claude, Cursor u otro cliente MCP a este endpoint. Puede iniciar sesión con OAuth o usar una clave de API creada abajo.",
+    "mcpEndpoint": "Endpoint",
+    "mcpHint": "Las claves funcionan aquí y en la API REST: envía una como x-api-key. Las herramientas MCP pueden leer tus datos, pero nunca cambiarlos."
   },
   "channels": {
     "title": "Canales de entrega",

@@ -215,7 +215,7 @@
     "feedOff": "Feeden är av. Aktivera den för att få en URL som kalendrar kan prenumerera på.",
     "enableFeed": "Aktivera feed",
     "keysTitle": "API-nycklar",
-    "keysDescription": "Full åtkomst för skript och dashboards: skicka x-api-key i stället för en sessionskaka. Begränsat till 600 förfrågningar i timmen per nyckel.",
+    "keysDescription": "Full åtkomst för skript, dashboards och MCP-klienter: skicka x-api-key i stället för en sessionskaka. Begränsat till 600 förfrågningar i timmen per nyckel.",
     "createKey": "Skapa nyckel",
     "shownOnce": "Den här nyckeln visas bara en gång — förvara den på ett säkert ställe.",
     "copy": "Kopiera",
@@ -245,7 +245,11 @@
     "revokeTitle": "Återkalla den här nyckeln?",
     "revokeDescription": "Förfrågningar med ”{name}” misslyckas direkt. Detta går inte att ångra.",
     "keepKey": "Behåll nyckeln",
-    "errGeneric": "Något gick fel."
+    "errGeneric": "Något gick fel.",
+    "mcpTitle": "MCP-server",
+    "mcpDescription": "Peka Claude, Cursor eller en annan MCP-klient mot den här slutpunkten. Den kan logga in med OAuth eller använda en API-nyckel som skapas nedan.",
+    "mcpEndpoint": "Slutpunkt",
+    "mcpHint": "Nycklar fungerar här och mot REST-API:et — skicka en som x-api-key. MCP-verktyg kan läsa dina data men aldrig ändra dem."
   },
   "channels": {
     "title": "Leveranskanaler",

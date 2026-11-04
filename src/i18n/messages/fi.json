@@ -215,7 +215,7 @@
     "feedOff": "Syöte on pois käytöstä. Ota se käyttöön saadaksesi URL:n, jonka kalenterit voivat tilata.",
     "enableFeed": "Ota syöte käyttöön",
     "keysTitle": "API-avaimet",
-    "keysDescription": "Täysi pääsy skripteille ja koontinäytöille: lähetä x-api-key istuntoevästeen sijaan. Enintään 600 pyyntöä tunnissa avainta kohti.",
+    "keysDescription": "Täysi pääsy skripteille, koontinäytöille ja MCP-asiakkaille: lähetä x-api-key istuntoevästeen sijaan. Enintään 600 pyyntöä tunnissa avainta kohti.",
     "createKey": "Luo avain",
     "shownOnce": "Tämä avain näytetään vain kerran — tallenna se turvalliseen paikkaan.",
     "copy": "Kopioi",
@@ -245,7 +245,11 @@
     "revokeTitle": "Mitätöi tämä avain?",
     "revokeDescription": "Pyynnöt, joissa käytetään avainta ”{name}”, alkavat epäonnistua heti. Tätä ei voi perua.",
     "keepKey": "Pidä avain",
-    "errGeneric": "Jokin meni pieleen."
+    "errGeneric": "Jokin meni pieleen.",
+    "mcpTitle": "MCP-palvelin",
+    "mcpDescription": "Osoita Claude, Cursor tai muu MCP-asiakas tähän päätepisteeseen. Se voi kirjautua OAuthilla tai käyttää alla luotua API-avainta.",
+    "mcpEndpoint": "Päätepiste",
+    "mcpHint": "Avaimet toimivat täällä ja REST-rajapinnassa – lähetä sellainen x-api-key-otsakkeessa. MCP-työkalut voivat lukea tietojasi, mutta eivät muuttaa niitä."
   },
   "channels": {
     "title": "Toimituskanavat",

@@ -215,7 +215,7 @@
     "feedOff": "De feed staat uit. Schakel hem in voor een URL waarop kalenders zich kunnen abonneren.",
     "enableFeed": "Feed inschakelen",
     "keysTitle": "API-sleutels",
-    "keysDescription": "Volledige toegang voor scripts en dashboards: stuur x-api-key in plaats van een sessiecookie. Maximaal 600 verzoeken per uur per sleutel.",
+    "keysDescription": "Volledige toegang voor scripts, dashboards en MCP-clients: stuur x-api-key in plaats van een sessiecookie. Maximaal 600 verzoeken per uur per sleutel.",
     "createKey": "Sleutel aanmaken",
     "shownOnce": "Deze sleutel wordt één keer getoond — bewaar hem op een veilige plek.",
     "copy": "Kopiëren",
@@ -245,7 +245,11 @@
     "revokeTitle": "Deze sleutel intrekken?",
     "revokeDescription": "Verzoeken met “{name}” mislukken vanaf dat moment. Dit kan niet ongedaan worden gemaakt.",
     "keepKey": "Sleutel behouden",
-    "errGeneric": "Er ging iets mis."
+    "errGeneric": "Er ging iets mis.",
+    "mcpTitle": "MCP-server",
+    "mcpDescription": "Wijs Claude, Cursor of een andere MCP-client naar dit eindpunt. Die kan inloggen met OAuth of een hieronder aangemaakte API-sleutel gebruiken.",
+    "mcpEndpoint": "Eindpunt",
+    "mcpHint": "Sleutels werken hier en op de REST-API — stuur er een als x-api-key. MCP-tools kunnen je gegevens lezen, maar nooit wijzigen."
   },
   "channels": {
     "title": "Bezorgkanalen",

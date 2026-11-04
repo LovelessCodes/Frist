@@ -100,8 +100,8 @@ The container runs as root and writes to `/data`; on a NAS, pre-create that fold
 
 - **Interactive reference** (Scalar): `/api/auth/reference` on a running instance — covers every endpoint, including the plugin ones.
 - **Machine-readable spec**: [`openapi.json`](./openapi.json); regenerate with `bun run openapi` after endpoint changes.
-- **MCP**: the app serves an MCP endpoint at `/api/mcp`, protected by OAuth (dynamic client registration, CIMD, PKCE). Point an MCP client at `http://localhost:3000/api/mcp` — it discovers the authorization server, and you approve access on the consent page.
-- **Scripts & API keys**: `POST /api/auth/api-key/create` returns a key (shown once). Call any endpoint with `x-api-key: <key>` instead of a session cookie — keys are full-access per user, rate-limited (600 requests/hour), and revocable through the same API. A management UI is [#7](https://github.com/LovelessCodes/Frist/issues/7).
+- **MCP**: the app serves an MCP endpoint at `/api/mcp`, protected by OAuth (dynamic client registration, CIMD, PKCE). Point an MCP client at `http://localhost:3000/api/mcp` — it discovers the authorization server, and you approve access on the consent page. Clients that cannot do OAuth can send an API key as `x-api-key` instead.
+- **Scripts & API keys**: `POST /api/auth/api-key/create` returns a key (shown once), or create one on the Integrations page. Call any endpoint — including `/api/mcp` — with `x-api-key: <key>` instead of a session cookie; keys are full-access per user, rate-limited (600 requests/hour), and revocable through the same API or the UI.
 
 ## Notifications
 
