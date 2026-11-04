@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { defineConfig } from 'vite'
 import { devtools } from '@tanstack/devtools-vite'
 
@@ -6,8 +7,15 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
+const { version } = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf8'),
+) as { version: string }
+
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  // Surfaced in the sidebar (and the MCP server banner) so a screenshot
+  // answers "which release is this?" without opening the container.
+  define: { __APP_VERSION__: JSON.stringify(version) },
   plugins: [
     {
       // better-auth rate limits per client IP (single-value x-forwarded-for);

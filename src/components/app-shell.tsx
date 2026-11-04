@@ -14,6 +14,7 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import { authClient } from '@/lib/auth-client'
+import { APP_VERSION } from '@/lib/version'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { BudgetSummary } from '@/components/budget-summary'
 import { FristMark } from '@/components/frist-mark'
@@ -74,8 +75,13 @@ function Wordmark({ className }: { className?: string }) {
       }
     >
       <FristMark className="size-6 shrink-0" />
-      <span className="truncate text-sm font-semibold tracking-tight group-data-[collapsible=icon]:hidden">
-        Frist
+      <span className="flex min-w-0 flex-col group-data-[collapsible=icon]:hidden">
+        <span className="truncate text-sm font-semibold tracking-tight">
+          Frist
+        </span>
+        <span className="truncate text-[11px] leading-tight text-muted-foreground tabular-nums">
+          v{APP_VERSION}
+        </span>
       </span>
     </span>
   )

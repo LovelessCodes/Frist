@@ -1,5 +1,6 @@
 import { McpServer, type AuthInfo } from '@modelcontextprotocol/server'
 import * as z from 'zod'
+import { APP_VERSION } from '../../lib/version'
 import { db } from '../../lib/db'
 import * as categories from '../services/categories'
 import * as incomeSources from '../services/income-sources'
@@ -20,7 +21,7 @@ function json(value: unknown) {
 }
 
 export function createFristMcpServer(authInfo?: AuthInfo) {
-  const server = new McpServer({ name: 'frist', version: '0.3.1' })
+  const server = new McpServer({ name: 'frist', version: APP_VERSION })
 
   server.registerTool(
     'list_subscriptions',
